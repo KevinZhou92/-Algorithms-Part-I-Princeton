@@ -15,13 +15,12 @@ public class FastCollinearPoints {
         
         N = points.length;
         seg = new LineSegment[N];
-        Point[] alux  = new Point[N];
+        Point[] other  = new Point[N];
         Point[] base = new Point[N];
-        boolean hasInline;
-        int cap = 0;
-        int same = 0;
         Point current;
         Point max;
+        Point min;
+        num = 0;
 
         for (int i = 0; i < N; i++) {
             if (points[i] == null)
@@ -30,52 +29,35 @@ public class FastCollinearPoints {
                 if (points[i].compareTo(points[j]) == 0)
                     throw new IllegalArgumentException();
             }
-            alux[i] = points[i];
+            other[i] = points[i];
             base[i] = points[i];
         }   
         
         Arrays.sort(base);
         
-        for (int i = 0, j = 0; i < N; i++, j = 0) {
+        for (int i = 0, j = 1; i < N; i++, j = 1) {
             current = base[i];
-            Arrays.sort(alux, current.slopeOrder());
-//            StdOut.println(current);
-//            for (int k = 0; k < N; k++) {
-//                StdOut.println(alux[k]);
-//                StdOut.println(current.slopeTo(alux[k]));
-//            }
-//            StdOut.println("-------------------------");
-                
-            while (j < N - 2) {
-                if (current.slopeTo(alux[j]) != current.slopeTo(alux[j+2])) 
-                    j++;
-                else {
-                    for (cap = 0, hasInline = false, max = alux[j];
-                            j+cap < N && current.slopeTo(alux[j]) == current.slopeTo(alux[j+cap]); cap++) {
-//                        StdOut.println(alux[j+cap]);
-                        if (alux[j+cap].compareTo(max) > 0)
-                            max = alux[j+cap];
-                        if (current.compareTo(alux[j+cap]) > 0) {
-                            hasInline = true;     
-//                            StdOut.println(cap);
-//                            StdOut.println(alux[j+cap]);
-                        } else if (current.compareTo(alux[j+cap]) == 0)
-                            same = 1; 
-                    }
-                    j += cap;
-//                    StdOut.println(hasInline);
-                    if (!hasInline && cap - same >= 2) {
-                        seg[num++] = new LineSegment(current, max);
-                        if (seg[seg.length-1] != null) {
-                            changeSize(seg.length, seg.length * 2);
-                        }
-                    }
-                    same = 0;
+            max = base[i];
+            min = base[i];
+            Arrays.sort(other, current.slopeOrder()); // sort based on slope, the point to its self is Negative-Inifinity
+            while (j < N-2){
+                if (current.slopeTo(other[j]) != current.slopeTo(other[j+2])) { // check if there are at least 4 collinear points 
+                    j++; 
+                    continue;
                 }
-
+                for(int offset = 0; offset < N-j && current.slopeTo(other[j]) == current.slopeTo(other[j+offset]); offset++){ // find the endpoint and get the maximal combination
+                    if (other[j+offset].compareTo(max) > 0) max = other[j+offset];
+                    if (other[j+offset].compareTo(min) < 0) min = other[j+offset];
+                }
+                
+                if (min != current) continue; //check if this combination appeaared before;
+                
+                LineSegment temp = new LineSegment(min, max);
+                if (seg[seg.length-1] != null) changeSize(seg.length, 2*seg.length);
+                seg[num++] = temp;
+                j++;
             }
         }
-        
     }
     
     private void changeSize(int oldSize, int newSize) {
