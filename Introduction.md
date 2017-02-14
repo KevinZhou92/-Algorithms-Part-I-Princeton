@@ -8,4 +8,4 @@ Beside, according to the Honor Code principle, please do not just copy & paste, 
 + Assignment 2 : RandomizedQueue and Dequeue
 + Assignment 3 : Collinear Points
 + Assignment 4 : 8-Puzzles
-+ Assignment 4 : WordNet
++ Assignment 6 : WordNet
