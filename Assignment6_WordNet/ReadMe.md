@@ -30,11 +30,11 @@ This assignment take two input files to build a wordnet DAG, aftering building t
  This is a solution both memory and time-efficient.
  
  
- | Test      | wORDnet Constructor    | Length&Ancestor Calculation Calls |
-| :-------------: |:-------------:| :-----:|
-| Benchmark      | 0.81 seconds | 218282.80 |
-| My Solution     | 10.00 seconds     |   127528.00 |
-|Ratio |           |             1.71| 
+ | Test      | WordNet Constructor    | Length&Ancestor Calculation Calls | isNoun calls|
+| :-------------: |:-------------:| :-----:|:-------:|
+| Benchmark      | 0.81 seconds | 218282.80 |  601080.00|
+| My Solution    | 10.00 seconds |127528.00 | 434408.00|
+|Ratio           |               |      1.71|       1.38 |
 
 The only thing i need to mention is the problem i met while implementing the BFS algorithm. Since the input may contain a self-cycle point, and i used a queue to keep a list of vertex that are going to be visited and a set of vertex that have already been visted along with the depth they were, there could be a situation, for example, i enqueued 0 and put its id and depth into the set, at the same time 0 is self-cycled, so this vertex will be examined and add to the SET again with its depth incremented 1, this will give us the wrong results. So we have to add a if statement to rule out this scenario.
 See codes below:
@@ -64,4 +64,4 @@ while (!queue1.isEmpty()) {
 
 ```
 
-+ **Outcast** : Just iterate each noun and calculate the sum of distance between the noun and others, pick the noun with the max sum.
++ Outcast : Just iterate each noun and calculate the sum of distance between the noun and others, pick the noun with the max sum.
