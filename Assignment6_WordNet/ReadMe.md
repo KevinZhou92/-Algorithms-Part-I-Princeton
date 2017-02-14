@@ -19,7 +19,7 @@ This assignment take two input files to build a wordnet DAG, aftering building t
 
 + **SAP** : This is the object to sovle the shortest distance and the shortest common ancestor between two points, we initialize this intance with a DAG, then the job is to take two int and calculate. 
 
-+ **Outcast** : This object and find the least related word in a file compare to other words, which means, to find out the word with largest sum of legth to other words.
++ **Outcast** : This object can find the least related word in a file compare to other words, which means, to find out the word with largest sum of legth to other words.
 
 
 
