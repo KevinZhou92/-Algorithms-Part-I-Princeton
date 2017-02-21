@@ -65,3 +65,7 @@ while (!queue1.isEmpty()) {
 ```
 
 + Outcast : Just iterate each noun and calculate the sum of distance between the noun and others, pick the noun with the max sum.
+
+
+
+[Reference of this project](https://www.cs.princeton.edu/courses/archive/fall15/cos226/assignments/wordnet.html)
