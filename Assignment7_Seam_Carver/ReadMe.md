@@ -41,7 +41,10 @@ The energy is high (white) for pixels in the image where there is a rapid color 
 ………………if (dist[v] > dist[u] + weight(u, v))
 ………………………dist[v] = dist[u] + weight(u, v)
 ```
-&nbsp;
+
+
+
+
 [Reference of Topological Algorithm](http://www.geeksforgeeks.org/shortest-path-for-directed-acyclic-graphs/)
 
 [Reference of this project](http://www.cs.princeton.edu/courses/archive/spring13/cos226/assignments/seamCarving.html)
