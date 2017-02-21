@@ -215,6 +215,9 @@ public class SeamCarver {
     }
     
     private void checkSeam(int[] seam, boolean isVertical) {
+        if (seam[0] < 0) {
+            throw new IllegalArgumentException("Check it!");
+        }
         if (isVertical) {
             if (pixels.length != seam.length) {
                 throw new IllegalArgumentException("Check it!");
