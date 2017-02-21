@@ -9,3 +9,4 @@ Beside, according to the Honor Code principle, please do not just copy & paste, 
 + Assignment 3 : Collinear Points
 + Assignment 4 : 8-Puzzles
 + Assignment 6 : WordNet
++ Assighment 7 : Seam Carver
