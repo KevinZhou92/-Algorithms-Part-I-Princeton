@@ -33,7 +33,8 @@ When n is sufficiently large, there is a threshold value p* such that when p < p
 
 
 ======
-**Note:** There are two special points in this assignment.:
+**Note:** There are two special points in this assignment:
+
 1. While doing the Monte Caro, we have to check each cell if they have already been opened, if it was opened before, we should ignore this loop and continue, this is the only way to calculate for the correct result.
 
 2. For avoiding the backwash problem, we can initialize two boards and doing the percolate only from the top end on one board, and we will compare the same cell on different boards, if they have different results, then we can define here is a backwash.
