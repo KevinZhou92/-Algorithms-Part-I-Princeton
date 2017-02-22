@@ -10,3 +10,9 @@ Beside, according to the Honor Code principle, please do not just copy & paste, 
 + Assignment 4 : 8-Puzzles
 + Assignment 6 : WordNet
 + Assighment 7 : Seam Carver
+
+
+
+=====
+
+**Note**: In order to run these assignments, we need to download the edu folder(which consists of libraries we used in the code) and put that under the root folder of your program. 
