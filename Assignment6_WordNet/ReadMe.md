@@ -10,7 +10,7 @@ This assignment take two input files to build a wordnet DAG, aftering building t
 + **List of hypernyms.** The file [hypernyms.txt](ftp://ftp.cs.princeton.edu/pub/cs226/wordnet/hypernyms.txt) contains the hypernym relationships. Line i of the file (counting from 0) contains the hypernyms of synset i. The first field is the synset id, which is always the integer i; subsequent fields are the id numbers of the synset's hypernyms.
 ![](https://www.cs.princeton.edu/courses/archive/fall15/cos226/assignments/wordnet-hypernyms.png)
 
-+ Note:A hyponym(more specific synset) might point to multiple hypernyms(more general sets), take a look on the graph below.
++ **Note**:A hyponym(more specific synset) might point to multiple hypernyms(more general sets), take a look on the graph below.
 ![](https://www.cs.princeton.edu/courses/archive/fall15/cos226/assignments/wordnet-event.png)
 
 
@@ -30,7 +30,7 @@ This assignment take two input files to build a wordnet DAG, aftering building t
  This is a solution both memory and time-efficient.
  
  
- | Test      | WordNet Constructor    | Length&Ancestor Calculation Calls | isNoun calls|
+| Test      | WordNet Constructor    | Length&Ancestor Calculation Calls | isNoun calls|
 | :-------------: |:-------------:| :-----:|:-------:|
 | Benchmark      | 0.81 seconds | 218282.80 |  601080.00|
 | My Solution    | 10.00 seconds |127528.00 | 434408.00|
