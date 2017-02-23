@@ -24,9 +24,9 @@ This assignment take two input files to build a wordnet DAG, aftering building t
 
 
 ##Reviews:
- + WordNet : Input file synsets.txt maps words to its id, hypernyms maps ids to its parent ids. To build the complete wordnet, we have to build a hashmap to map each noun to its id sets, which is for the mapping between the input nouns and the graph ids. Moreover, we have to buil id maps between children id and parent id, this tells us a specific set belongs to which general set. This is the fundation for constructing the graph.
- 
- + SAP : This is the main solution of the problem, it is a very classical Breadth-First Search. Instead of using the provided class, i decided to implement the algorithm on my own, which eventually saved me lots of time and tons of memory.
+**WordNet** : Input file synsets.txt maps words to its id, hypernyms maps ids to its parent ids. To build the complete wordnet, we have to build a hashmap to map each noun to its id sets, which is for the mapping between the input nouns and the graph ids. Moreover, we have to buil id maps between children id and parent id, this tells us a specific set belongs to which general set. This is the fundation for constructing the graph.
+
+**SAP** : This is the main solution of the problem, it is a very classical Breadth-First Search. Instead of using the provided class, i decided to implement the algorithm on my own, which eventually saved me lots of time and tons of memory.
  This is a solution both memory and time-efficient.
  
  
@@ -64,7 +64,13 @@ while (!queue1.isEmpty()) {
 
 ```
 
-+ Outcast : Just iterate each noun and calculate the sum of distance between the noun and others, pick the noun with the max sum.
+>                     0---->1
+>                     |     ^
+>                     |__2__|
+
+As shown in the graph above, the length between 0 and 1 is 1, however, if we dont have the snippet above, we will enqueue 2 and 1 at the first time, and during the second loop, if we dequeue 2 first, we will enqueue its neighbor 1 into the queue again. As we can see from the graph, after dequeue the first 1 in the queue, we will have length 1 for Integer 1. However, if we process the one again, we will increment the length of 1 to two, whivh will leads to the wrong result.
+
+**Outcast** : Just iterate each noun and calculate the sum of distance between the noun and others, pick the noun with the max sum.
 
 
 
