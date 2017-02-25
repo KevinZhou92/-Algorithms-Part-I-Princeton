@@ -1,3 +1,18 @@
+/*----------------------------------------------------------------
+ *  Author:        Kevin Zhou
+ *  Written:       12/18/2016
+ *  Last updated:  12/18/2016
+ *
+ *  Compilation:   javac Deque.java
+ *  Execution:     java 
+ *  
+ *  
+ *
+ *
+ *----------------------------------------------------------------*/
+
+
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 

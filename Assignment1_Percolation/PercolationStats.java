@@ -1,3 +1,17 @@
+/*----------------------------------------------------------------
+ *  Author:        Kevin Zhou
+ *  Written:       11/18/2016
+ *  Last updated:  11/17/2016
+ *
+ *  Compilation:   javac Percolation.java
+ *  Execution:     java Percolation
+ *  
+ *  Test Percolation of a system
+ *
+ *
+ *----------------------------------------------------------------*/
+
+
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 

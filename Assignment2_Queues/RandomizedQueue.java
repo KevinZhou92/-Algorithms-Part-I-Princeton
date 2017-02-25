@@ -1,3 +1,17 @@
+/*----------------------------------------------------------------
+ *  Author:        Kevin Zhou
+ *  Written:       12/18/2016
+ *  Last updated:  12/18/2016
+ *
+ *  Compilation:   javac RandomizedQueue.java
+ *  Execution:     java 
+ *  
+ *  
+ *
+ *
+ *----------------------------------------------------------------*/
+
+
 import edu.princeton.cs.algs4.StdRandom;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
