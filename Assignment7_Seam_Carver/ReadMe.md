@@ -19,6 +19,10 @@ Seam-carving is a content-aware image resizing technique where the image is redu
 The energy is high (white) for pixels in the image where there is a rapid color gradient (such as the boundary between the sea and sky and the boundary between the surfing Josh Hug on the left and the ocean behind him). The seam-carving technique avoids removing such high-energy pixels. 
 
 
+
+
+
+
 2. **Seam identification**. The next step is to find a vertical seam of minimum total energy. This is similar to the classic shortest path problem in an edge-weighted digraph except for the following:
 
 + The weights are on the vertices instead of the edges.
