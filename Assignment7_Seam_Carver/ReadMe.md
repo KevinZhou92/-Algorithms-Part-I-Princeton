@@ -11,12 +11,12 @@ Seam-carving is a content-aware image resizing technique where the image is redu
 
 **_Notation_**. In image processing, pixel (x, y) refers to the pixel in column x and row y, with pixel (0, 0) at the upper left corner and pixel (W − 1, H − 1) at the bottom right corner.  Warning: this is the opposite of the standard mathematical notation used in linear algebra where (i, j) refers to row i and column j and with Cartesian coordinates where (0, 0) is at the lower left corner. 
 
+
 1. **Energy calculation**. The first step is to calculate the energy of each pixel, which is a measure of the importance of each pixel—the higher the energy, the less likely that the pixel will be included as part of a seam (as we'll see in the next step). In this assignment, you will implement the dual-gradient energy function, which is described below. Here is the dual-gradient energy function of the surfing image above:
 <p align = center>
 <img src = http://coursera.cs.princeton.edu/algs4/assignments/HJoceanSmallEnergy.png>
 </p>
 The energy is high (white) for pixels in the image where there is a rapid color gradient (such as the boundary between the sea and sky and the boundary between the surfing Josh Hug on the left and the ocean behind him). The seam-carving technique avoids removing such high-energy pixels. 
-
 
 
 2. **Seam identification**. The next step is to find a vertical seam of minimum total energy. This is similar to the classic shortest path problem in an edge-weighted digraph except for the following:
