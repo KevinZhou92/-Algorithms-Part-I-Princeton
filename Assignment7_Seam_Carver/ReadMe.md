@@ -25,8 +25,8 @@ The energy is high (white) for pixels in the image where there is a rapid color 
 <p align = center>
 <img src=http://coursera.cs.princeton.edu/algs4/assignments/HJoceanSmallVerticalSeam.png>
 </p>
-3. **Seam removal**. The final step is to remove from the image all of the pixels along the seam.
 
+3. **Seam removal**. The final step is to remove from the image all of the pixels along the seam.
 
 &nbsp;
 **Note** : The key to solve the shortest path problem in a DAG(directed arcylic graph) is to use topological order of each node and calculate the shortest path by relaxing each edge according topological order, the pseudocode and example is below:
@@ -42,6 +42,10 @@ The energy is high (white) for pixels in the image where there is a rapid color 
 ………………if (dist[v] > dist[u] + weight(u, v))
 ………………………dist[v] = dist[u] + weight(u, v)
 ```
+
+**Additional Note:**Since Java is using approximity to calculate float number, which means we will not get the exact number as we do it by hand, since float has accuracy, we should a threshold here instead of an exact 0 while comparing two numbers.
+
+`if (Math.abs(energySum[i + 1][preCol] - energy[i + 1][preCol] - energySum[i][preCol + k]) < 0.00000000009 )`
 
 [Reference of Topological Algorithm](http://www.geeksforgeeks.org/shortest-path-for-directed-acyclic-graphs/)
 
