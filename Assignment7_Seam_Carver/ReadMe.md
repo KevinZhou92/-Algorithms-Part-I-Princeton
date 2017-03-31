@@ -33,7 +33,8 @@ The energy is high (white) for pixels in the image where there is a rapid color 
 <p align = center>
 <img src=http://d1hyf4ir1gqw6c.cloudfront.net//wp-content/uploads/TopologicalSort.png>
 </p>
-``` 
+
+```
 1) Initialize dist[] = {INF, INF, ….} and dist[s] = 0 where s is the source vertex.
 2) Create a toplogical order of all vertices.
 3) Do following for every vertex u in topological order.
@@ -41,9 +42,6 @@ The energy is high (white) for pixels in the image where there is a rapid color 
 ………………if (dist[v] > dist[u] + weight(u, v))
 ………………………dist[v] = dist[u] + weight(u, v)
 ```
-
-
-
 
 [Reference of Topological Algorithm](http://www.geeksforgeeks.org/shortest-path-for-directed-acyclic-graphs/)
 
